@@ -1,0 +1,1192 @@
+
+/* =========================================
+   STYLESHELF — COMPLETE STYLESHEET
+   Colors: Ivory, Beige, Navy and Taupe
+========================================= */
+
+/* ---------- COLOR VARIABLES ---------- */
+
+:root {
+    --ivory: #F7F4EF;
+    --beige: #E4D8C9;
+    --navy: #17202C;
+    --taupe: #B7A18A;
+
+    --white: #FFFFFF;
+    --text-muted: #77716B;
+    --border: #E4D8C9;
+    --success: #476B52;
+    --danger: #A94442;
+
+    --shadow: 0 8px 24px rgba(23, 32, 44, 0.07);
+    --radius: 14px;
+}
+
+/* ---------- RESET AND BASE ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--ivory);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.25;
+    color: var(--navy);
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+a {
+    color: var(--navy);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--taupe);
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.primary-link,
+.secondary-link,
+.primary-btn,
+.secondary-btn,
+button.primary-btn,
+button.secondary-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.primary-link,
+.primary-btn,
+button.primary-btn {
+    background: var(--navy);
+    color: var(--ivory);
+}
+
+.primary-link:hover,
+.primary-btn:hover,
+button.primary-btn:hover {
+    background: #293747;
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.secondary-link,
+.secondary-btn,
+button.secondary-btn {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--taupe);
+}
+
+.secondary-link:hover,
+.secondary-btn:hover,
+button.secondary-btn:hover {
+    background: var(--beige);
+    color: var(--navy);
+}
+
+/* ---------- FORMS ---------- */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--navy);
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--taupe);
+    box-shadow: 0 0 0 3px rgba(183, 161, 138, 0.18);
+}
+
+input[type="file"] {
+    padding: 10px;
+    background: var(--ivory);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ---------- LOGIN AND REGISTRATION ---------- */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 18px;
+    background: var(--ivory);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 38px;
+    background: var(--white);
+    border: 1px solid var(--beige);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.auth-card h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.auth-card .subtitle {
+    margin-bottom: 28px;
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-card form {
+    margin-top: 24px;
+}
+
+.auth-card button,
+.auth-card .primary-btn {
+    width: 100%;
+}
+
+.auth-link {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-link a {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.brand-auth {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--navy);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+/* ---------- SUCCESS AND ERROR MESSAGES ---------- */
+
+.message {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.message.success {
+    color: var(--success);
+    background: #EAF1E9;
+    border: 1px solid #C9DCC9;
+}
+
+.message.error {
+    color: var(--danger);
+    background: #F8EAE8;
+    border: 1px solid #EBC9C5;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 13px;
+}
+
+/* ---------- DASHBOARD LAYOUT ---------- */
+
+.dashboard-page {
+    min-height: 100vh;
+    display: flex;
+    background: var(--ivory);
+}
+
+.sidebar {
+    width: 245px;
+    min-height: 100vh;
+    padding: 32px 22px;
+    background: var(--navy);
+    color: var(--ivory);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.brand {
+    display: inline-block;
+    margin-bottom: 48px;
+    color: var(--ivory);
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.brand:hover {
+    color: var(--beige);
+}
+
+.sidebar-label {
+    margin-bottom: 18px;
+    color: var(--taupe);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sidebar nav {
+    display: grid;
+    gap: 8px;
+}
+
+.nav-link {
+    display: block;
+    padding: 13px 14px;
+    border-radius: 8px;
+    color: var(--ivory);
+    font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--beige);
+    color: var(--navy);
+}
+
+.logout-link {
+    margin-top: auto;
+}
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    padding: 42px;
+}
+
+.dashboard-header,
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashboard-header {
+    margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+    margin: 10px 0;
+    font-size: clamp(28px, 4vw, 38px);
+}
+
+.dashboard-header p,
+.section-heading p {
+    color: var(--text-muted);
+}
+
+.eyebrow {
+    color: var(--taupe);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ---------- DASHBOARD STATISTICS ---------- */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 32px 0 42px;
+}
+
+.stat-card {
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.stat-card p {
+    margin-top: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    margin-top: 12px;
+    font-size: 36px;
+}
+
+/* ---------- RECENTLY ADDED CLOTHES ---------- */
+
+.recent-section {
+    margin-top: 35px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+.section-heading > a {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.clothes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.clothing-card {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clothing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.clothing-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: var(--beige);
+}
+
+.clothing-info {
+    padding: 14px;
+}
+
+.clothing-info h3 {
+    margin-bottom: 7px;
+    font-size: 15px;
+}
+
+.clothing-info p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 38px 24px;
+    border: 1px dashed var(--taupe);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    margin-bottom: 22px;
+    color: var(--text-muted);
+}
+
+/* ---------- CREATE OUTFIT BANNER ---------- */
+
+.mix-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 38px;
+    padding: 30px;
+    background: var(--beige);
+    border-radius: var(--radius);
+}
+
+.mix-banner h2 {
+    margin: 8px 0;
+    font-size: 25px;
+}
+
+.mix-banner p:not(.eyebrow) {
+    margin-bottom: 0;
+    color: #62584E;
+}
+
+/* ---------- PAGE HEADERS ---------- */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.page-header p {
+    color: var(--text-muted);
+}
+
+/* ---------- WARDROBE PAGE ---------- */
+
+.wardrobe-container,
+.outfits-container {
+    width: 100%;
+}
+
+.content-card {
+    margin-bottom: 25px;
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.content-card h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.clothing-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+}
+
+.clothing-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.filter-bar button {
+    min-height: 44px;
+}
+
+.color-dot {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 6px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+/* ---------- DELETE AND ACTION BUTTONS ---------- */
+
+.danger-btn {
+    display: inline-block;
+    padding: 9px 13px;
+    background: var(--white);
+    color: var(--danger);
+    border: 1px solid #D9A7A2;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.danger-btn:hover {
+    background: #F8EAE8;
+}
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* ---------- OUTFIT CREATION ---------- */
+
+.outfit-builder {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 25px 0;
+}
+
+.outfit-picker {
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.outfit-picker h3 {
+    margin-bottom: 15px;
+}
+
+.outfit-picker select {
+    margin-bottom: 15px;
+}
+
+.outfit-preview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px;
+    margin: 25px 0;
+    padding: 25px;
+    background: var(--beige);
+    border-radius: var(--radius);
+}
+
+.preview-item {
+    text-align: center;
+}
+
+.preview-item img {
+    width: 100%;
+    max-width: 250px;
+    height: 280px;
+    object-fit: contain;
+    background: var(--ivory);
+    border-radius: 10px;
+}
+
+.preview-item p {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.preview-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    padding: 20px;
+    background: var(--ivory);
+    border: 1px dashed var(--taupe);
+    border-radius: 10px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.saved-outfits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.saved-outfit-card {
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.saved-outfit-card h3 {
+    margin-bottom: 8px;
+}
+
+.saved-outfit-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ---------- GENERAL UTILITIES ---------- */
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+hr {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+/* ---------- RESPONSIVE: TABLETS ---------- */
+
+@media (max-width: 1100px) {
+    .dashboard-main {
+        padding: 28px;
+    }
+
+    .clothes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .saved-outfits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- RESPONSIVE: MOBILE ---------- */
+
+@media (max-width: 700px) {
+    .dashboard-page {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .brand {
+        margin-bottom: 20px;
+    }
+
+    .sidebar nav {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 10px 5px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .logout-link {
+        margin-top: 12px;
+    }
+
+    .dashboard-main {
+        padding: 22px 16px;
+    }
+
+    .dashboard-header,
+    .mix-banner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-header h1 {
+        font-size: 29px;
+    }
+
+    .stats-grid {
+        gap: 10px;
+        margin: 25px 0 32px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card h2 {
+        font-size: 29px;
+    }
+
+    .clothes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .clothing-card img {
+        height: 150px;
+    }
+
+    .clothing-info {
+        padding: 10px;
+    }
+
+    .mix-banner {
+        padding: 22px;
+    }
+
+    .clothing-form,
+    .outfit-builder {
+        grid-template-columns: 1fr;
+    }
+
+    .outfit-preview {
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .preview-item img {
+        height: 180px;
+    }
+
+    .saved-outfits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 27px 22px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ---------- RESPONSIVE: SMALL PHONES ---------- */
+
+@media (max-width: 380px) {
+    .clothes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clothing-card img {
+        height: 220px;
+    }
+
+    .outfit-preview {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================
+   STYLESHELF — VERTICAL OUTFIT PREVIEW
+===================================== */
+
+.outfit-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 24px 0;
+    padding: 28px 20px;
+    background: var(--beige);
+    border-radius: 16px;
+}
+
+/* Each clothing item occupies its own row */
+.outfit-preview .preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+/* IMPORTANT: hidden elements must actually disappear */
+.outfit-preview .preview-placeholder[hidden],
+.outfit-preview .preview-item img[hidden] {
+    display: none !important;
+}
+
+/* Clothing images */
+.outfit-preview .preview-item img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 300px;
+    padding: 12px;
+    object-fit: contain;
+    background: var(--ivory);
+    border-radius: 12px;
+}
+
+/* Empty preview before a selection is made */
+.outfit-preview .preview-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    min-height: 160px;
+    padding: 24px;
+    background: var(--ivory);
+    border: 1px dashed var(--taupe);
+    border-radius: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Names underneath the clothing */
+.outfit-preview .preview-item p {
+    margin: 12px 0 22px;
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Saved outfits can use smaller images */
+.saved-outfit-card .outfit-preview {
+    padding: 16px;
+}
+
+.saved-outfit-card .outfit-preview .preview-item img {
+    max-width: 240px;
+    height: 200px;
+}
+
+.saved-outfit-card .outfit-preview .preview-item p {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* Mobile screens */
+@media (max-width: 700px) {
+    .outfit-preview {
+        padding: 16px 12px;
+    }
+
+    .outfit-preview .preview-item img {
+        height: 240px;
+    }
+
+    .outfit-preview .preview-placeholder {
+        min-height: 120px;
+    }
+}
+
+
+
+/* =====================================
+   VISUAL CLOTHING PICKER
+===================================== */
+
+[hidden] {
+    display: none !important;
+}
+
+.outfit-mode {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 22px 0 30px;
+}
+
+.mode-option {
+    cursor: pointer;
+}
+
+.mode-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mode-option span {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid var(--taupe);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--navy);
+}
+
+.mode-option input:checked + span {
+    background: var(--navy);
+    color: var(--ivory);
+    border-color: var(--navy);
+}
+
+.mode-option input:focus-visible + span {
+    outline: 3px solid var(--taupe);
+    outline-offset: 3px;
+}
+
+.picker-heading {
+    margin: 28px 0 16px;
+    font-size: 22px;
+}
+
+.visual-clothing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.visual-clothing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--white);
+    border: 2px solid var(--beige);
+    border-radius: 13px;
+    transition: border-color 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.visual-clothing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.visual-clothing-card.selected {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(23, 32, 44, 0.12);
+}
+
+.visual-clothing-card input[type="radio"] {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--navy);
+    cursor: pointer;
+}
+
+.visual-clothing-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: var(--ivory);
+    border-radius: 8px;
+}
+
+.visual-item-name {
+    margin-top: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.visual-item-color {
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+#separates-picker[hidden],
+#dress-picker[hidden] {
+    display: none !important;
+}
+
+/* Vertical outfit preview */
+#outfit-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 24px 16px;
+    margin: 20px 0 28px;
+    background: var(--beige);
+    border-radius: 16px;
+}
+
+#outfit-preview .preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+#outfit-preview .preview-item img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 250px;
+    padding: 10px;
+    object-fit: contain;
+    background: var(--ivory);
+    border-radius: 12px;
+}
+
+#outfit-preview .preview-item img[hidden],
+#outfit-preview .preview-placeholder[hidden] {
+    display: none !important;
+}
+
+#outfit-preview .preview-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    min-height: 120px;
+    padding: 20px;
+    background: var(--ivory);
+    border: 1px dashed var(--taupe);
+    border-radius: 10px;
+    color: var(--text-muted);
+}
+
+#outfit-preview .preview-item p {
+    margin: 10px 0 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Saved outfit photos */
+.saved-visual-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 0;
+}
+
+.saved-visual-item {
+    width: 100%;
+    text-align: center;
+}
+
+.saved-visual-item img {
+    width: 100%;
+    max-width: 230px;
+    height: 190px;
+    object-fit: contain;
+    background: var(--ivory);
+    border-radius: 9px;
+}
+
+.saved-visual-item p {
+    margin: 8px 0;
+}
+
+@media (max-width: 600px) {
+    .visual-clothing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .visual-clothing-card img {
+        height: 155px;
+    }
+
+    #outfit-preview .preview-item img {
+        height: 210px;
+    }
+}
